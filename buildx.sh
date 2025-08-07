@@ -1,3 +1,4 @@
+#!/bin/bash
 # ref docker-x11base//rootfs/buildx.sh
 source /etc/profile
 export |grep DOCKER_REG |grep -Ev "PASS|PW"
