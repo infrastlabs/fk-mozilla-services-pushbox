@@ -56,4 +56,4 @@ jobs:
           # echo "${DOCKER_REGISTRY_QCLOUD_PASS}" |docker login --username=${DOCKER_REGISTRY_QCLOUD_USER} --password-stdin $REPO_QING
 
           # BUILD
-          sh buildx.sh pushbox
+          bash buildx.sh pushbox
