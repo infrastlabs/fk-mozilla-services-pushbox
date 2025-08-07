@@ -1,6 +1,8 @@
 # Docker 17.05 or higher required for multi-stage builds
 # NOTE: this builds w/ a nightly version (specified in rust-toolchain)
-FROM rust:1.55-buster as builder
+# 25.8.7>> E: The repository 'http://deb.debian.org/debian buster Release' does not have a Release file.
+# FROM rust:1.55-buster as builder
+FROM rust:1.55-bullseye as builder
 ADD . /app
 WORKDIR /app
 RUN \
@@ -14,7 +16,8 @@ RUN \
     cp /app/target/release/pushbox /app/bin
 
 
-FROM debian:buster-slim
+# FROM debian:buster-slim
+FROM debian:bullseye-slim
 # FROM debian:buster  # for debugging docker build
 RUN \
     groupadd --gid 10001 app && \
