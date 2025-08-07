@@ -2,7 +2,12 @@
 # NOTE: this builds w/ a nightly version (specified in rust-toolchain)
 # 25.8.7>> E: The repository 'http://deb.debian.org/debian buster Release' does not have a Release file.
 # FROM rust:1.40.0-buster as builder
-FROM rust:1.40.0-bullseye as builder
+# docker.io/library/rust:1.40.0-bullseye: not found
+# FROM rust:1.40.0-bullseye as builder
+# https://registry.cyou/_/rust/tags?name=1.40
+#   1.40.0-alpine  
+# FROM rust:1.40.0-alpine as builder
+FROM rust:1.55-bullseye as builder
 ADD . /app
 WORKDIR /app
 RUN \
@@ -17,8 +22,8 @@ RUN \
 
 
 # FROM debian:buster-slim
-FROM debian:bullseye-slim
 # FROM debian:buster  # for debugging docker build
+FROM debian:bullseye-slim
 MAINTAINER <src+pushbox@jrconlin.com>
 RUN \
     groupadd --gid 10001 app && \
