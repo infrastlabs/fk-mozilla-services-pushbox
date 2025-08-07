@@ -4,8 +4,10 @@
 # FROM rust:1.40.0-buster as builder
 # docker.io/library/rust:1.40.0-bullseye: not found
 # FROM rust:1.40.0-bullseye as builder
-# https://registry.cyou/_/rust/tags?name=1.40
+# https://registry.cyou/_/rust/tags?name=1.40 ... 1.50: none bullseye;
+# https://registry.cyou/_/rust/tags?name=1.55 
 #   1.40.0-alpine  
+#   https://pkgs.alpinelinux.org/packages?name=*mysqlclient*&branch=edge&repo=&arch=x86_64&origin=&flagged=&maintainer=
 # FROM rust:1.40.0-alpine as builder
 FROM rust:1.55-bullseye as builder
 ADD . /app
